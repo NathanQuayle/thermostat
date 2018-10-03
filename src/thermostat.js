@@ -1,7 +1,6 @@
 function Thermostat() {
     this.temp = 20;
     this.maxTemp = 32;
-    this.powerSaving = false;
 }
 
 Thermostat.prototype.increase = function() {
@@ -13,4 +12,8 @@ Thermostat.prototype.decrease = function() {
         throw "Unable to decrease temperature further. Minimum temp is 10 degrees"
     }
     this.temp--;
+}
+
+Thermostat.prototype.powerSaving = function() {
+    this.maxTemp = 25
 }
