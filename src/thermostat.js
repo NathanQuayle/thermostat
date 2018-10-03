@@ -1,5 +1,7 @@
 function Thermostat() {
     this.temp = 20;
+    this.maxTemp = 32;
+    this.powerSaving = false;
 }
 
 Thermostat.prototype.increase = function() {

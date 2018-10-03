@@ -7,7 +7,13 @@ describe('Thermostat', function() {
         expect(thermostat.temp).toEqual(20);
     });
 
+    it('starts with power-saving mode off and a default max temp of 32', function() {
+        expect(thermostat.maxTemp).toEqual(32);
+    });
 
+    it('starts with power-saving mode off', function() {
+        expect(thermostat.powerSaving).toEqual(false);
+    });
 
     describe('increase', function(){
         it('increases the thermostat temperature', function() {
@@ -29,7 +35,6 @@ describe('Thermostat', function() {
             expect(function(){
                 thermostat.decrease()
             }).toThrow("Unable to decrease temperature further. Minimum temp is 10 degrees");
-
         })
     });
 });
