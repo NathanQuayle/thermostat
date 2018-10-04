@@ -29,6 +29,7 @@ describe('Thermostat', function() {
             for (var step = 0; step < 10; step++) {
                 thermostat.decrease()
             };
+
             expect(function(){
                 thermostat.decrease()
             }).toThrow("Unable to decrease temperature further. Minimum temp is 10 degrees");
@@ -54,7 +55,7 @@ describe('Thermostat', function() {
     });
 
     describe('energyUsage', function() {
-        it('returns an energy rating of low-usage if temp is < 18', function() {
+        it('returns an energy rating of low-usage if temp is under 18', function() {
             thermostat.temp = 17;
             expect(thermostat.energyUsage()).toEqual('low-usage');
         });
